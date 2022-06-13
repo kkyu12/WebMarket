@@ -10,11 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container">
-      <div class="navbar-header"><a href="./welcome.jsp" class="navbar-brand">Home</a></div>
-    </div>
-  </nav>
+  <jsp:include page="menu.jsp"></jsp:include>
   <div class="p-5 bg-primary text-white">
     <div class="container">
       <h1 class="display-3">
@@ -32,8 +28,6 @@
       현재 접속 시간 : <%=format.format(now)%>
     </div>
   </div>
-  <footer class="container">
-    <p>&copy; WebMarket</p>
-  </footer>
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
