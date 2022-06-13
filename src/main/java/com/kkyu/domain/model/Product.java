@@ -8,25 +8,25 @@ import java.util.Objects;
 // 4. 무지성 toString()
 // 5. 필요하면 equals / hashCode 재정의 (오버라이드)
 public class Product { // f4 누르면 상속도 관계가 나옴 extends Object 생략된 것
-  public static void main(String[] args) {
-    Product product = new Product("33","33",11);
-    product.id = "33";
-    // product.setId("111");
-    System.out.println(product.hashCode());
+  // public static void main(String[] args) {
+  //   Product product = new Product("33","33",11);
+  //   product.id = "33";
+  //   // product.setId("111");
+  //   System.out.println(product.hashCode());
 
-    Product product2 = new Product("33","33",11);
-    System.out.println(product2.hashCode());
+  //   Product product2 = new Product("33","33",11);
+  //   System.out.println(product2.hashCode());
 
-    Object object = new Product("33","33",11);
+  //   Object object = new Product("33","33",11);
 
-    // System.out.println(product == product2); 
-    // == : 주소비교(레퍼런스비교) hasCode가 다름  // 결과 false // new할 때 마다 다 다른 것
+  //   // System.out.println(product == product2); 
+  //   // == : 주소비교(레퍼런스비교) hasCode가 다름  // 결과 false // new할 때 마다 다 다른 것
     
-    // 근데 id가 같으면 같은 걸로 처리해야된다
-    System.out.println(product.equals(product2)); // 결과 false 소스 추가후 true
-    System.out.println(product.hashCode() == product2.hashCode()); // hashCode가 재정의 됨 결과 true 소스 추가 될때 hashCode가 추가된 이유 알아서 맞춰주려고
-    System.out.println(product == product2); // 주소는 모르지만 다른 것 false
-  }
+  //   // 근데 id가 같으면 같은 걸로 처리해야된다
+  //   System.out.println(product.equals(product2)); // 결과 false 소스 추가후 true
+  //   System.out.println(product.hashCode() == product2.hashCode()); // hashCode가 재정의 됨 결과 true 소스 추가 될때 hashCode가 추가된 이유 알아서 맞춰주려고
+  //   System.out.println(product == product2); // 주소는 모르지만 다른 것 false
+  // }
   // crtl + O 메소드
   // static 다른 공간에 메모리가 있는 // 메소드도 변수도 static 붙는 순간 다른 공간에 저장 // 동적은 new // 정적과 동적은 다른 동네에 있음
   private String id;
