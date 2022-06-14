@@ -1,13 +1,10 @@
 <%@page import="com.kkyu.data.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="repository" class="com.kkyu.data.ProductRepository" scope="session"></jsp:useBean>
-<!-- crtl + space 로 자동완성 -->
-<!-- jsp:useBean~ == ProductRepository repository = new ProductRepository() -->
+<!-- useBean 삭제 -->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -22,11 +19,10 @@
       <h1 class="display-3">상품 정보</h1>
     </div>
   </div>
-
   <%
+  ProductRepository repository = ProductRepository.getInstance();
   String id = request.getParameter("id");
   Product product = repository.getProductById(id);
-
   %>
   <div class="container">
     <div class="row">

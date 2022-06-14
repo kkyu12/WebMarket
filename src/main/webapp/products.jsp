@@ -1,13 +1,10 @@
 <%@page import="com.kkyu.data.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="repository" class="com.kkyu.data.ProductRepository" scope="session"></jsp:useBean>
-<!-- crtl + space 로 자동완성 -->
-<!-- jsp:useBean~ == ProductRepository repository = new ProductRepository() -->
+<!-- useBean 삭제 -->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -27,6 +24,12 @@
   <div class="container">
     <div class="row" align="center">
       <%
+      // 싱글턴패턴
+      ProductRepository repository = ProductRepository.getInstance();
+      // out.print(repository.hashCode());
+      // 서버가 시작해서 죽을 때 까지 계속 살아있음
+      // ProductRepository repository = new ProductRepository();
+      // 페이지 띄울 때마다 생성 + useBean 과 같이 사용
       List<Product> products = repository.getAllProducts();
       for (int i = 0; i <products.size(); i++) {
     	  Product product = products.get(i);
@@ -42,7 +45,6 @@
       %>
     </div>
   </div>
-
   <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
