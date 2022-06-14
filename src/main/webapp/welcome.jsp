@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.Date,java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -26,6 +28,15 @@
       SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
       %>
       현재 접속 시간 : <%=format.format(now)%>
+      <%
+      // 여기서 저장하고 products 에서 출력
+      List<String> foods = new ArrayList<>();
+      foods.add("백반1");
+      foods.add("백반2");
+      foods.add("백반3");
+      session.setAttribute("foods", foods);
+      session.setMaxInactiveInterval(1);
+      %>
     </div>
   </div>
   <jsp:include page="footer.jsp"></jsp:include>

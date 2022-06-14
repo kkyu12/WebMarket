@@ -24,6 +24,13 @@
   <div class="container">
     <div class="row" align="center">
       <%
+      // welcome에서 저장하고 여기서 출력하기
+      // String name = (String) session.getAttribute("name");
+      // int age = (int) session.getAttribute("age");
+      if (session.getAttribute("foods") != null) {
+    	  out.print(session.getAttribute("foods"));
+      }
+      
       // 싱글턴패턴
       ProductRepository repository = ProductRepository.getInstance();
       // out.print(repository.hashCode());
