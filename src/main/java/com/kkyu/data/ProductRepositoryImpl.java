@@ -45,11 +45,13 @@ public class ProductRepositoryImpl implements ProductRepository {
     products.add(notebook);
     products.add(tablet);
   }
-
+  
+  @Override
   public List<Product> getAllProducts() {
     return products;
   }
   
+  @Override
   public Product getProductById(String id) {
     // List -> Stream (데이터의 흐름) p.173과 비교
     return products.stream()
@@ -57,7 +59,8 @@ public class ProductRepositoryImpl implements ProductRepository {
       .findFirst()
       .get();
   }
-
+  
+  @Override
   public void addProduct(Product product) {
     products.add(product);
   }
