@@ -21,14 +21,15 @@ public class ProductRepositoryDbImpl implements ProductRepository {
 
 	@Override
 	public Product getProductById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	    return getAllProducts().stream()
+	  	      .filter((product) -> product.getId().equals(id)) // 조건
+	  	      .findFirst() // 첫번째
+	  	      .get(); // 얻기
 	}
 
 	@Override
 	public void addProduct(Product product) {
-		// TODO Auto-generated method stub
-		
+		dao.insert(product);
 	}
 
 }
