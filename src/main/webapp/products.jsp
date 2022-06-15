@@ -1,4 +1,4 @@
-<%@page import="com.kkyu.data.ProductRepository"%>
+<%@page import="com.kkyu.domain.repository.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
 <%@page import="java.util.List"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
@@ -25,21 +25,21 @@
     <div class="row" align="center">
       <%
       // welcome에서 저장하고 여기서 출력하기
-      // String name = (String) session.getAttribute("name");
-      // int age = (int) session.getAttribute("age");
-      if (session.getAttribute("foods") != null) {
-    	  out.print(session.getAttribute("foods"));
-      }
-      
-      // 싱글턴패턴
-      ProductRepository repository = ProductRepository.getInstance();
-      // out.print(repository.hashCode());
-      // 서버가 시작해서 죽을 때 까지 계속 살아있음
-      // ProductRepository repository = new ProductRepository();
-      // 페이지 띄울 때마다 생성 + useBean 과 같이 사용
-      List<Product> products = repository.getAllProducts();
-      for (int i = 0; i <products.size(); i++) {
-    	  Product product = products.get(i);
+            // String name = (String) session.getAttribute("name");
+            // int age = (int) session.getAttribute("age");
+            if (session.getAttribute("foods") != null) {
+          	  out.print(session.getAttribute("foods"));
+            }
+            
+            // 싱글턴패턴
+            ProductRepository repository = ProductRepository.getInstance();
+            // out.print(repository.hashCode());
+            // 서버가 시작해서 죽을 때 까지 계속 살아있음
+            // ProductRepository repository = new ProductRepository();
+            // 페이지 띄울 때마다 생성 + useBean 과 같이 사용
+            List<Product> products = repository.getAllProducts();
+            for (int i = 0; i <products.size(); i++) {
+          	  Product product = products.get(i);
       %>
         <div class="col-md-4">
           <h3><%= product.getName() %></h3>

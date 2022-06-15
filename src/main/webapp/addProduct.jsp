@@ -1,4 +1,3 @@
-<%@page import="com.kkyu.data.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
 <%@page import="java.util.List"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"

@@ -1,5 +1,5 @@
+<%@page import="com.kkyu.domain.repository.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
-<%@page import="com.kkyu.data.ProductRepository"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

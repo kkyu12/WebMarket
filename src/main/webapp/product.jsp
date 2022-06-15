@@ -1,4 +1,4 @@
-<%@page import="com.kkyu.data.ProductRepository"%>
+<%@page import="com.kkyu.domain.repository.ProductRepository"%>
 <%@page import="com.kkyu.domain.model.Product"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,8 +21,8 @@
   </div>
   <%
   ProductRepository repository = ProductRepository.getInstance();
-  String id = request.getParameter("id");
-  Product product = repository.getProductById(id);
+    String id = request.getParameter("id");
+    Product product = repository.getProductById(id);
   %>
   <div class="container">
     <div class="row">

@@ -3,8 +3,9 @@ package com.kkyu.data;
 import java.util.ArrayList;
 import java.util.List;
 import com.kkyu.domain.model.Product;
+import com.kkyu.domain.repository.ProductRepository;
 
-public class ProductRepository {
+public class ProductRepositoryImpl implements ProductRepository {
 
   private List<Product> products = new ArrayList<>();
 
@@ -12,13 +13,13 @@ public class ProductRepository {
   // 1. static 인스턴스 준비
   // 2. static 메서드로 인스턴스 리턴 (getInstance() 이름을 주로 씀)
   // 3. 생성자 막기 public 에서 private로 생성자가 못 생기도록 막음
-  private static ProductRepository instance = new ProductRepository();
+  private static ProductRepositoryImpl instance = new ProductRepositoryImpl();
 
-  public static ProductRepository getInstance() {
+  public static ProductRepositoryImpl getInstance() {
     return instance;
   }
 
-  private ProductRepository() {
+  private ProductRepositoryImpl() {
     Product phone = new Product("P1234", "iPhone 6s", 800000);
     phone.setDescription("4.7-inch, 1334x750 Retina HD display");
     phone.setCategory("Smart Phone");
