@@ -1,6 +1,5 @@
 package com.kkyu.data;
 
-import java.util.Collections;
 import java.util.List;
 import com.kkyu.data.dao.ProductDao;
 import com.kkyu.domain.model.Product;
@@ -17,7 +16,7 @@ public class ProductRepositoryDbImpl implements ProductRepository {
 	@Override
 	public List<Product> getAllProducts() {
 		// TODO Auto-generated method stub
-		return Collections.emptyList();
+		return dao.getAll();
 	}
 
 	@Override
